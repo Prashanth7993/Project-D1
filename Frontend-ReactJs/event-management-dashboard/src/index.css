@@ -1,0 +1,48 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #34b3a0;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  .navbar-nav {
+      text-align: center;
+      width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .table thead {
+      display: block;
+  }
+
+  .table tbody tr {
+      display: block;
+      margin-bottom: 15px;
+  }
+
+  .table tbody tr td {
+      display: block;
+      text-align: left;
+      font-size: 14px;
+      position: relative;
+  }
+
+  .table tbody tr td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+  }
+}
