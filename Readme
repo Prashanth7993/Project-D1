@@ -21,7 +21,7 @@ The Event Management Dashboard is a web-based application designed to help organ
 ### Backend
 - Built with Java 8 and Spring Boot.
 - Exposes RESTful APIs to handle business logic for events, attendees, and tasks.
-- Database: MySQL (can be configured for other relational databases).
+- Database: PostgreSQL (can be configured for other relational databases).
 
 ---
 
@@ -34,7 +34,7 @@ The Event Management Dashboard is a web-based application designed to help organ
 ### Backend:
 - Java 8 or later
 - Spring Boot
-- PostgreSQL or MySQL
+- MySQL
 
 ---
 
