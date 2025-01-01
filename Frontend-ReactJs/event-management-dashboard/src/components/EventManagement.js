@@ -193,4 +193,3 @@ function EventManagement() {
 }
 
 export default EventManagement;
-
