@@ -12,6 +12,8 @@ The Event Management Dashboard is a web-based application designed to help organ
 
 ---
 
+
+
 ## Project Structure
 
 ### Frontend
