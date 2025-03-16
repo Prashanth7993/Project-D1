@@ -8,8 +8,11 @@
 # EXPOSE 8080
 # ENTRYPOINT ["java","-jar","/usr/app/event-management-0.0.1-SNAPSHOT.jar"]
 
-# Use a JDK 17 base image
+# Use OpenJDK 17 as the base image
 FROM openjdk:17-slim AS build
+
+# Install Maven
+RUN apt update && apt install -y maven
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -21,7 +24,7 @@ COPY pom.xml /usr/src/app
 # Build the application
 RUN mvn clean package
 
-# Use a lightweight JRE for running the app
+# Use a lightweight JDK for running the app
 FROM openjdk:17-slim
 
 WORKDIR /app
