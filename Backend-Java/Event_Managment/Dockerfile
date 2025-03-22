@@ -1,12 +1,29 @@
-FROM maven:3.6.3-jdk-11 AS build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /usr/src/app
-COPY src /usr/src/app/src
-COPY pom.xml /usr/src/app
-RUN mvn -f /usr/src/app/pom.xml clean package
 
-FROM openjdk:21-jre-slim
-COPY --from=build /usr/src/app/target/*.jar /usr/app/app.jar
+COPY pom.xml ./
+RUN mvn dependency:go-offline
+
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+FROM gcr.io/distroless/java21-debian11:nonroot
+WORKDIR /app
+COPY --from=build /usr/src/app/target/*.jar app.jar
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+
+
+# FROM maven:3.6.3-jdk-11 AS build
+# WORKDIR /usr/src/app
+# COPY src /usr/src/app/src
+# COPY pom.xml /usr/src/app
+# RUN mvn -f /usr/src/app/pom.xml clean package
+
+# FROM openjdk:21-jre-slim
+# COPY --from=build /usr/src/app/target/*.jar /usr/app/app.jar
+# EXPOSE 8080
+# ENTRYPOINT ["java","-jar","app.jar"]
 
 
