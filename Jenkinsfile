@@ -24,11 +24,6 @@ pipeline {
                 }
             }
         }
-        stage('frontend image push to hub.docker.com'){
-            steps{
-                
-            }
-        }
         
         stage('build backend'){
             steps{
