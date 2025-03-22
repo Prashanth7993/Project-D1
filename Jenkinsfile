@@ -37,6 +37,15 @@ pipeline {
                 }
             } 
         }
+        stage('frontend image push to hub.docker.com'){
+            steps{
+                withCredentials([usernamePassword(credentialsId: 'Docker_Hub_Credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
+                    sh 'docker tag backend $DOCKER_USER/backend:v1'
+                    sh 'docker push $DOCKER_USER/backend:v1'
+                }
+            }
+        }
              
     }
 }
