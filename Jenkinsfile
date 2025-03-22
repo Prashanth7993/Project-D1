@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    FRONTEND_DIR = 'Frontend-ReactJs/event_managment-dashboard'
+    FRONTEND_DIR = 'Frontend-ReactJs/event-managment-dashboard'
     BACKEND_DIR = 'Backend-Java/Event_Managment'
   }
   stages {
