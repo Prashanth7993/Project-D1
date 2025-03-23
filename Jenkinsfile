@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                // Get some code from a GitHub repository
                 git branch: 'main', url:'https://github.com/Prashanth7993/Project-D1.git'
             }
         }
@@ -24,7 +23,6 @@ pipeline {
                 }
             }
         }
-        
         stage('build backend'){
             steps{
                 dir("${BACKEND_DIR}") {
