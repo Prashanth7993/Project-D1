@@ -1,17 +1,25 @@
 package com.EventManagment.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.EventManagment.model.Task;
 import com.EventManagment.service.EventService;
 import com.EventManagment.service.TaskService;
 
-import java.util.List;
-
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://react-event-service:30007")
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
@@ -22,8 +30,7 @@ public class TaskController {
     @Autowired
     private EventService eventService;
 
-    
-    
+
     @GetMapping  // This will handle the GET request for /api/events
     public List<Task> getAllTasks() {
         return taskService.getTasks();  
