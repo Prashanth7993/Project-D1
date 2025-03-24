@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-event-deploy-latest
+  namespace: project-d1
+spec:
+  selector:
+    matchLabels:
+      app: react-event-app-latest
+  template:
+    metadata:
+      labels:
+        app: react-event-app-latest
+    spec:
+      containers:
+        - name: react-event-app-latest
+          image: prashanth7993/frontend:v4
+          ports:
+            - containerPort: 80

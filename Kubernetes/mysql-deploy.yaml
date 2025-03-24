@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deploy
+  namespace: project-d1
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+            - name: MYSQL_DATABASE
+              value: EventManagement
+          ports:
+            - containerPort: 3306
+          volumeMounts: # Add volumeMounts
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql # Default MySQL data directory
+      volumes: # Add volumes
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc # Reference your PVC
