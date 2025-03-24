@@ -22,10 +22,10 @@ spec:
               value: EventManagement
           ports:
             - containerPort: 3306
-          volumeMounts: # Add volumeMounts
+          volumeMounts:
             - name: mysql-persistent-storage
-              mountPath: /var/lib/mysql # Default MySQL data directory
-      volumes: # Add volumes
+              mountPath: /var/lib/mysql
+      volumes: 
         - name: mysql-persistent-storage
           persistentVolumeClaim:
-            claimName: mysql-pvc # Reference your PVC
+            claimName: mysql-pvc
