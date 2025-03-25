@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://3.136.165.99:30000/api'; // Replace with your backend's API base URL
+const BASE_URL = 'http://spring-boot-service:30000/api'; // Replace with your backend's API base URL
 
 
 //Create an Events
