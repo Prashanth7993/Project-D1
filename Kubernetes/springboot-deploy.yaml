@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-app
-          image: prashanth7993/backend:v4
+          image: prashanth7993/backend:v5
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://mysql:3306/EventManagement

@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: react-event-app-latest
-          image: prashanth7993/frontend:v4
+          image: prashanth7993/frontend:v5
           ports:
             - containerPort: 80
