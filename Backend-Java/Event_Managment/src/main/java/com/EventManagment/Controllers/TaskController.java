@@ -19,7 +19,7 @@ import com.EventManagment.model.Task;
 import com.EventManagment.service.EventService;
 import com.EventManagment.service.TaskService;
 
-@CrossOrigin(origins = "http://3.136.165.99:30007")
+@CrossOrigin(origins = "http://react-event-service:30007")
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {

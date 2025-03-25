@@ -20,7 +20,7 @@ import com.EventManagment.service.AttendeeNotFoundException;
 import com.EventManagment.service.AttendeeService;
 import com.EventManagment.service.EventNotFoundException;
 
-@CrossOrigin(origins = "http://3.136.165.99:30007")
+@CrossOrigin(origins = "http://react-event-service:30007")
 @RestController
 @RequestMapping("/api/attendees")
 public class AttendeeController {
