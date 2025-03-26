@@ -17,8 +17,8 @@ pipeline {
                     echo "Docker Frontend image build sucessfully completed."
                     withCredentials([usernamePassword(credentialsId: 'Docker_Hub_Credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
-                        sh 'docker tag frontend $DOCKER_USER/frontend:v8'
-                        sh 'docker push $DOCKER_USER/frontend:v8'
+                        sh 'docker tag frontend $DOCKER_USER/frontend:v9'
+                        sh 'docker push $DOCKER_USER/frontend:v9'
                     }
                 }
             }
@@ -30,8 +30,8 @@ pipeline {
                     echo "Docker Backend image build sucessfully completed."
                     withCredentials([usernamePassword(credentialsId: 'Docker_Hub_Credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
-                        sh 'docker tag backend $DOCKER_USER/backend:v8'
-                        sh 'docker push $DOCKER_USER/backend:v8'
+                        sh 'docker tag backend $DOCKER_USER/backend:v9'
+                        sh 'docker push $DOCKER_USER/backend:v9'
                     }
                 }
             } 
