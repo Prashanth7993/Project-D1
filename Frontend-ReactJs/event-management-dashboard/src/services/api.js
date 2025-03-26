@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://spring-boot-service.project-d1.svc.cluster.local:8080/api'; // Replace with your backend's API base URL
+const BASE_URL = 'http://3.136.165.99:30000/api'; // Replace with your backend's API base URL
 
 
 
