@@ -1,0 +1,9 @@
+images:
+ - name: frontend
+   image: prashanthtestacr.azurecr.io/frontend
+   namespace: helm-deployment
+   port: 80
+ - name: backend
+   image: prashanthtestacr.azurecr.io/backend
+   namespace: helm-deployment
+   port: 8080

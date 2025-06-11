@@ -1,0 +1,16 @@
+{{- range .Values.images }}
+apiVersion: v1
+kind: Service
+metadata:
+ name: {{ .name }}
+ namespace: {{ .namespace }}
+spec:
+ type: {{ $.Values.serviceType }}
+ selector:
+  app: {{ .name }}
+ ports:
+  - protocol: TCP
+    port: {{ .port }}
+    targetPort: {{ .port }}
+---
+{{- end }}
